@@ -15,3 +15,7 @@ post '/search' do
     @results = JSON.parse(@results.body)
     @results = @results['organic_results']
 end
+
+get '/search'
+    erb :search
+end 
