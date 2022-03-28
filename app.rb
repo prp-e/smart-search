@@ -1,5 +1,6 @@
 require 'sinatra'
 require 'httparty'
+require 'json'
 
 get '/' do
     erb :index
@@ -10,5 +11,6 @@ post '/search' do
     @url = ENV['SEARP_API']
     @query_url = @url + @query
 
-    {:query => @query, :url => @query_url}.to_json
+    @results = HTTParty.get(@query_url)
+    @results = @results.body
 end
