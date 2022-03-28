@@ -1,6 +1,6 @@
 <form class="m-5 p-5" action="/search" method="POST">
     <div class="form-group">
-        <input class="form-control" type="text"  name="query" placeholder=<%= @query %> />
+        <input class="form-control" type="text"  name="query" placeholder="<%= @query %>" />
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-primary">Search</button>
@@ -10,7 +10,11 @@
 <div class="container">
     <ul>
         <% @results.each do |result| %>
-            <li><%= result['title'] %></li>
+            <li>
+            <a href="<%= result['link']%>"><%= result['title'] %></a>
+            <br />
+            <p><%= result['snippet'] %> </p>
+            </li>
         <% end %>
     </ul>
 </div>
