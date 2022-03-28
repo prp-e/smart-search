@@ -2,5 +2,5 @@ require 'sinatra'
 require 'httparty'
 
 get '/' do
-    'Hello World!'
+    erb :index
 end
