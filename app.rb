@@ -14,6 +14,8 @@ post '/search' do
     @results = HTTParty.get(@query_url)
     @results = JSON.parse(@results.body)
     @results = @results['organic_results']
+
+    redirect_to '/search'
 end
 
 get '/search'
