@@ -12,5 +12,6 @@ post '/search' do
     @query_url = @url + @query
 
     @results = HTTParty.get(@query_url)
-    @results = @results.body
+    @results = JSON.parse(@results.body)
+    @results = @results['organic_results']
 end
