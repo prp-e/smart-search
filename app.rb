@@ -18,6 +18,6 @@ post '/search' do
     redirect_to '/search'
 end
 
-get '/search'
+get '/search' do
     erb :search
 end 
