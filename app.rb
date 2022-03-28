@@ -15,9 +15,5 @@ post '/search' do
     @results = JSON.parse(@results.body)
     @results = @results['organic_results']
 
-    redirect_to '/search'
-end
-
-get '/search' do
     erb :search
-end 
+end
